@@ -1,0 +1,110 @@
+/* ЗАГАЛЬНЕ */
+body {
+    margin: 20px;
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ЗАВДАННЯ 1: ТАБЛИЦЯ */
+.variant-table {
+    width: 100%;
+    max-width: 700px;
+    min-width: 520px;
+    table-layout: fixed;
+    border-collapse: collapse;        /* єдина лінія між комірками */
+    border: 2px solid #000000;
+}
+
+/* усі лінії однакові: 2px, чорні */
+.variant-table td {
+    border: 2px solid #000000;
+    padding: 4px 8px;
+    vertical-align: middle;
+}
+
+/* ширина стовпців (сума = 700px) */
+.variant-table .c1  { width: 24.29%; }
+.variant-table .c2a { width: 12.57%; }
+.variant-table .c2b { width: 11.71%; }
+.variant-table .c3  { width: 51.43%; }
+
+/* 1-й рядок: #nn8f8f, nn = 05 */
+.row1 td {
+    height: 60px;
+    background-color: #058f8f;
+    color: #001010;                   /* контраст 4.93:1 */
+}
+
+/* hover: кольори навпаки */
+.row1:hover td {
+    background-color: #001010;
+    color: #058f8f;
+}
+
+/* 2-й рядок: #f5f5nn, nn = 05 */
+.row2 td {
+    height: 26px;
+    background-color: #f5f505;
+    color: #1a1a00;                   /* контраст 15.06:1 */
+}
+
+/* hover на весь рядок (він з двох <tr> через rowspan) */
+.variant-table:has(.row2:hover) .row2 td {
+    background-color: #1a1a00;
+    color: #f5f505;
+}
+
+/* 3-й рядок: тонкий, без заливки */
+.row3 td {
+    height: 22px;
+    padding: 0;
+}
+
+/* ЗАВДАННЯ 2: ЗОБРАЖЕННЯ */
+.figures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+/* полотно під кола */
+.figure {
+    width: 166px;
+    height: 150px;
+}
+
+/* спільний вигляд кіл */
+.circle {
+    box-sizing: border-box;
+    width: 92px;
+    height: 92px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    backface-visibility: hidden;      /* однакове згладжування */
+}
+
+/* напівпрозорі кольори */
+.red   { background-color: rgba(207, 17, 9, 0.5);   }
+.green { background-color: rgba(55, 167, 89, 0.5);  }
+.blue  { background-color: rgba(35, 111, 185, 0.5); }
+
+/* зображення 1: position */
+.fig-position {
+    position: relative;
+}
+
+.fig-position .circle {
+    position: absolute;
+}
+
+.fig-position .red   { left: 34px; top: 0;    }
+.fig-position .green { left: 74px; top: 58px; }
+.fig-position .blue  { left: 0;    top: 58px; }
+
+/* зображення 2: transform */
+.fig-transform .red   { transform: translate(34px, 0);       }
+.fig-transform .green { transform: translate(74px, -34px);   }
+.fig-transform .blue  { transform: translate(0, -126px);     }

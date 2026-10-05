@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №2 — Варіант 5</title>
+    <!-- Усі CSS-властивості винесені в окремий файл -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--  ЗАВДАННЯ 1: ТАБЛИЦЯ  -->
+    <table class="variant-table">
+        <!-- Ширина 4 логічних стовпців (2-й стовпець макета розбитий на два) -->
+        <colgroup>
+            <col class="c1">
+            <col class="c2a">
+            <col class="c2b">
+            <col class="c3">
+        </colgroup>
+
+        <!-- Рядок 1: ПІБ, кожна частина в окремій комірці -->
+        <tr class="row1">
+            <td>Шмагайло</td>
+            <td colspan="2">Марія</td>
+            <td>Євгеніївна</td>
+        </tr>
+
+        <!-- Рядок 2: група, номер лабораторної, номер варіанта -->
+        <tr class="row2">
+            <td rowspan="2">ІП-45</td>
+            <td rowspan="2">ЛР-2</td>
+            <td></td>
+            <td rowspan="2">Варіант 5</td>
+        </tr>
+        <tr class="row2">
+            <td></td>
+        </tr>
+
+        <!-- Рядок 3: тонкий порожній рядок -->
+        <tr class="row3">
+            <td></td>
+            <td colspan="2"></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!--  ЗАВДАННЯ 2: ЗОБРАЖЕННЯ  -->
+    <div class="figures">
+
+        <!-- Зображення 1: створене за допомогою position -->
+        <div class="figure fig-position">
+            <!-- Порядок накладання (знизу вгору): червоне → зелене → синє -->
+            <div class="circle red"></div>
+            <div class="circle green"></div>
+            <div class="circle blue"></div>
+        </div>
+
+        <!-- Зображення 2: створене за допомогою transform -->
+        <div class="figure fig-transform">
+            <div class="circle red"></div>
+            <div class="circle green"></div>
+            <div class="circle blue"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>
